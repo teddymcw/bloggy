@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--this isn't bootstrapped, especially the image sizing part!-->
+<h2>{{ single_post.title }}</h2><p>{{ single_post.views }}</p>
+<ul>
+  <p><em>{{ single_post.created_at }}</em></p>
+  <p>{{ single_post.content }}</p>
+  <p>Tag: {{ single_post.tag }}</p>
+  <p>Views: {{ single_post.views }}</p>
+  <br/>
+  <p> 
+  {% if single_post.image %}
+    <img src="/media/{{ single_post.image }}">
+  {% endif %}
+  </p>
+</ul>
+<p>Had enough? Return <a href="/blog">home</a>.</p><br/>
+{% endblock %}
